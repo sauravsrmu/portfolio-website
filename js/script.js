@@ -142,3 +142,31 @@ mybutton.addEventListener("click",function(){
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 });
+
+
+// script.js
+const modeToggle = document.getElementById('mode-toggle');
+const modeIcon = document.getElementById('mode-icon');
+const body = document.body;
+
+// Load the user's preference if it's available
+const savedMode = localStorage.getItem('mode');
+if (savedMode) {
+  body.classList.add(savedMode);
+  if (savedMode === 'dark-mode') {
+    modeIcon.classList.replace('bi-moon', 'bi-sun');
+  }
+}
+
+// Event listener for the toggle button
+modeToggle.addEventListener('click', () => {
+  body.classList.toggle('dark-mode');
+
+  if (body.classList.contains('dark-mode')) {
+    modeIcon.classList.replace('bi-moon', 'bi-sun');
+    localStorage.setItem('mode', 'dark-mode');
+  } else {
+    modeIcon.classList.replace('bi-sun', 'bi-moon');
+    localStorage.removeItem('mode');
+  }
+});

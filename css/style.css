@@ -384,3 +384,46 @@ footer .link-group a:hover{
     color: #fff;
     animation: pulse 3s infinite;
 }
+
+
+
+
+:root {
+    --background-color: white;
+    --text-color: #3f396d;
+    --navbar-bg: white;
+    --navbar-text-color: #3f396d;
+  }
+  
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .navbar {
+    background-color: var(--navbar-bg);
+    transition: background-color 0.3s;
+  }
+  
+  .navbar a {
+    color: var(--navbar-text-color);
+  }
+  
+  body.dark-mode {
+    --background-color: #121212;
+    --text-color: rgb(224, 23, 23);
+    --navbar-bg: #1c1c1c;
+    --navbar-text-color: rgb(220, 11, 11);
+  }
+  
+  button#mode-toggle {
+    background-color: var(--navbar-bg);
+    border: none;
+    transition: background-color 0.3s;
+  }
+  
+  button#mode-toggle i {
+    color: var(--navbar-text-color);
+  }
+  
